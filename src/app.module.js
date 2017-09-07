@@ -1,6 +1,4 @@
-"use strict";
-
-(function (app) {
+(function(app) {
   var NgModule = ng.core.NgModule;
   var BrowserModule = ng.platformBrowser.BrowserModule;
   var AnimalService = app.AnimalService;
@@ -12,7 +10,9 @@
     declarations: [AppComponent, RandomAnimalComponent],
     providers: [AnimalService],
     bootstrap: [AppComponent]
-  }).Class({
-    constructor: function constructor() {}
+  })
+  .Class({
+    constructor: function() { }
   });
+
 })(window.app || (window.app = {}));
