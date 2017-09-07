@@ -7,6 +7,8 @@ import { AnimalService } from './animal.service';
 })
 export class RandomAnimalComponent {
 
+  animal;
+
   constructor(@Inject(AnimalService) animalService) {
     animalService.generateRandomAnimals(2000, animal => this.animal = animal);
   }

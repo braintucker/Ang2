@@ -1,8 +1,6 @@
 export class AnimalService {
 
-  constructor() {
-    this.animals = sampleAnimals;
-  }
+  animals = sampleAnimals;
 
   getRandomAnimal() {
     const randomIndex = Math.floor(Math.random() * this.animals.length);
@@ -15,7 +13,6 @@ export class AnimalService {
   }
 
 }
-
 
 const sampleAnimals = [
   {
