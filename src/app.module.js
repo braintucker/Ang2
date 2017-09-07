@@ -1,20 +1,13 @@
-(function(app) {
-  var NgModule = ng.core.NgModule;
-  var BrowserModule = ng.platformBrowser.BrowserModule;
-  var AnimalService = app.AnimalService;
-  var RandomAnimalComponent = app.RandomAnimalComponent;
-  var AppComponent = app.AppComponent;
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { AnimalService } from './animal.service';
+import { RandomAnimalComponent } from './random-animal.component';
+import { AppComponent } from './app.component';
 
-  @NgModule({
-    imports: [BrowserModule],
-    declarations: [AppComponent, RandomAnimalComponent],
-    providers: [AnimalService],
-    bootstrap: [AppComponent]
-  })
-
-  class AppModule { }
-
-
-  app.AppModule = AppModule;
-
-})(window.app || (window.app = {}));
+@NgModule({
+  imports: [BrowserModule],
+  declarations: [AppComponent, RandomAnimalComponent],
+  providers: [AnimalService],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }

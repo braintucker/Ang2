@@ -1,20 +1,19 @@
 'use strict';
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.AppComponent = undefined;
+
+var _dec, _class;
+
+var _core = require('@angular/core');
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-(function (app) {
-  var _dec, _class;
-
-  var Component = ng.core.Component;
-
-  var AppComponent = (_dec = Component({
-    selector: 'my-app',
-    template: '\n      <h1>Random Animal</h1>\n      <random-animal></random-animal>\n    '
-  }), _dec(_class = function AppComponent() {
-    _classCallCheck(this, AppComponent);
-  }) || _class);
-
-  //adds meta data to the class
-
-  app.AppComponent = AppComponent;
-})(window.app || (window.app = {}));
+var AppComponent = exports.AppComponent = (_dec = (0, _core.Component)({
+  selector: 'my-app',
+  template: '\n    <h1>Random Animal</h1>\n    <random-animal></random-animal>\n  '
+}), _dec(_class = function AppComponent() {
+  _classCallCheck(this, AppComponent);
+}) || _class);

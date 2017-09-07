@@ -1,29 +1,28 @@
 'use strict';
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.RandomAnimalComponent = undefined;
+
+var _dec, _class;
+
+var _core = require('@angular/core');
+
+var _animal = require('./animal.service');
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-(function (app) {
-  var _dec, _class;
+var RandomAnimalComponent = exports.RandomAnimalComponent = (_dec = (0, _core.Component)({
+  selector: 'random-animal',
+  template: '<p><em>{{animal.breed}}</em> - {{animal.location}}</p>'
+}), _dec(_class = function RandomAnimalComponent(animalService) {
+  var _this = this;
 
-  var Component = ng.core.Component;
-  var Inject = ng.core.Inject;
-  var AnimalService = app.AnimalService;
+  _classCallCheck(this, RandomAnimalComponent);
 
-  var RandomAnimalComponent = (_dec = Component({
-    selector: 'random-animal',
-    template: '<p><em>{{animal.breed}}</em> - {{animal.location}}</p>'
-  }), _dec(_class = function RandomAnimalComponent(animalService) {
-    var _this = this;
-
-    _classCallCheck(this, RandomAnimalComponent);
-
-    //arrows use the same 'this' as their enclosing function
-    animalService.generateRandomAnimals(2000, function (animal) {
-      return _this.animal = animal;
-    });
-  }) || _class);
-  Inject(AnimalService)(RandomAnimalComponent, null, 0);
-
-
-  app.RandomAnimalComponent = RandomAnimalComponent;
-})(window.app || (window.app = {}));
+  animalService.generateRandomAnimals(2000, function (animal) {
+    return _this.animal = animal;
+  });
+}) || _class);
+(0, _core.Inject)(_animal.AnimalService)(RandomAnimalComponent, null, 0);
