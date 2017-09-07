@@ -1,12 +1,20 @@
 'use strict';
 
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
 (function (app) {
+  var _dec, _class;
+
   var Component = ng.core.Component;
 
-  app.AppComponent = Component({
+  var AppComponent = (_dec = Component({
     selector: 'my-app',
     template: '\n      <h1>Random Animal</h1>\n      <random-animal></random-animal>\n    '
-  }).Class({
-    constructor: function AppComponent() {}
-  });
+  }), _dec(_class = function AppComponent() {
+    _classCallCheck(this, AppComponent);
+  }) || _class);
+
+  //adds meta data to the class
+
+  app.AppComponent = AppComponent;
 })(window.app || (window.app = {}));

@@ -1,17 +1,22 @@
 (function(app) {
   var Component = ng.core.Component;
+  var Inject = ng.core.Inject;
   var AnimalService = app.AnimalService;
 
-  app.RandomAnimalComponent = Component({
+  @Component({
     selector: 'random-animal',
     template: '<p><em>{{animal.breed}}</em> - {{animal.location}}</p>'
   })
-  .Class({
-    constructor: [AnimalService, function RandomAnimalComponent(animalService) {
-      var self = this;
+
+  class RandomAnimalComponent {
+    constructor(@Inject(AnimalService) animalService) {
       //arrows use the same 'this' as their enclosing function
-      animalService.generateRandomAnimals(2000, (animal) => self.animal = animal);
-    }]
-  });
+      animalService.generateRandomAnimals(2000, (animal) => this.animal = animal);
+  }
+}
+
+
+
+  app.RandomAnimalComponent = RandomAnimalComponent;
 
 })(window.app || (window.app = {}));

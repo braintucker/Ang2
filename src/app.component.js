@@ -1,15 +1,16 @@
 (function(app) {
   var Component = ng.core.Component;
 
-  app.AppComponent = Component({
+  @Component({
     selector: 'my-app',
     template:`
       <h1>Random Animal</h1>
       <random-animal></random-animal>
     `
   })
-  .Class({
-    constructor: function AppComponent() { }
-  });
+  class AppComponent { }
+
+  //adds meta data to the class
+  app.AppComponent = AppComponent;
 
 })(window.app || (window.app = {}));

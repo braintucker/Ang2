@@ -1,19 +1,27 @@
 (function(app) {
-  var Class = ng.core.Class;
 
-  app.AnimalService = Class({
-    constructor: function AnimalService() {
+  class AnimalService {
+
+    constructor() {
       this.animals = sampleAnimals;
-    },
-    getRandomAnimal: function() {
+    }
+
+    //getRandomAnimal
+    getRandomAnimal() {
       var randomIndex = Math.floor(Math.random() * this.animals.length);
       return this.animals[randomIndex];
-    },
-    generateRandomAnimals: function(delay, callback) {
+    }
+
+    //generateRandomAnimals
+    generateRandomAnimals(delay, callback) {
       callback(this.getRandomAnimal());
       setTimeout(() => callback(this.getRandomAnimal()), delay);
     }
-  });
+  }
+
+
+
+  app.AnimalService = AnimalService;
 
   var sampleAnimals = [
     {

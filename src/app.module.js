@@ -5,14 +5,16 @@
   var RandomAnimalComponent = app.RandomAnimalComponent;
   var AppComponent = app.AppComponent;
 
-  app.AppModule = NgModule({
+  @NgModule({
     imports: [BrowserModule],
     declarations: [AppComponent, RandomAnimalComponent],
     providers: [AnimalService],
     bootstrap: [AppComponent]
   })
-  .Class({
-    constructor: function() { }
-  });
+
+  class AppModule { }
+
+
+  app.AppModule = AppModule;
 
 })(window.app || (window.app = {}));
