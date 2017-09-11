@@ -1,20 +1,21 @@
+import { Animal } from './animal.model';
 export class AnimalService {
 
-  animals = sampleAnimals;
+  animals: Animal[] = sampleAnimals;
 
-  getRandomAnimal() {
+  getRandomAnimal(): Animal {
     const randomIndex = Math.floor(Math.random() * this.animals.length);
     return this.animals[randomIndex];
   }
 
-  generateRandomAnimals(delay, callback) {
+  generateRandomAnimals(delay: number, callback: (animal: Animal) => void) {
     callback(this.getRandomAnimal());
     setTimeout(() => callback(this.getRandomAnimal()), delay);
   }
 
 }
 
-const sampleAnimals = [
+const sampleAnimals: Animal[] = [
   {
     "breed": "Tiger",
     "location": "N/A"

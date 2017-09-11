@@ -10,9 +10,6 @@ System.register(['@angular/core', './animal.service'], function(exports_1, conte
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var __param = (this && this.__param) || function (paramIndex, decorator) {
-        return function (target, key) { decorator(target, key, paramIndex); }
-    };
     var core_1, animal_service_1;
     var RandomAnimalComponent;
     return {
@@ -33,9 +30,8 @@ System.register(['@angular/core', './animal.service'], function(exports_1, conte
                     core_1.Component({
                         selector: 'random-animal',
                         template: '<p><em>{{animal.breed}}</em> - {{animal.location}}</p>'
-                    }),
-                    __param(0, core_1.Inject(animal_service_1.AnimalService)), 
-                    __metadata('design:paramtypes', [Object])
+                    }), 
+                    __metadata('design:paramtypes', [animal_service_1.AnimalService])
                 ], RandomAnimalComponent);
                 return RandomAnimalComponent;
             }());

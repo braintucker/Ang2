@@ -1,4 +1,5 @@
-import { Component, Inject } from '@angular/core';
+import { Component } from '@angular/core';
+import { Animal } from './animal.model';
 import { AnimalService } from './animal.service';
 
 @Component({
@@ -7,9 +8,9 @@ import { AnimalService } from './animal.service';
 })
 export class RandomAnimalComponent {
 
-  animal;
+  animal: Animal;
 
-  constructor(@Inject(AnimalService) animalService) {
+  constructor(animalService: AnimalService) {
     animalService.generateRandomAnimals(2000, animal => this.animal = animal);
   }
 
