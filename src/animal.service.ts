@@ -1,9 +1,9 @@
 import { Animal } from './animal.model';
 export class AnimalService {
 
-  animals: Animal[] = sampleAnimals;
+  private animals: Animal[] = sampleAnimals;
 
-  getRandomAnimal(): Animal {
+  private getRandomAnimal(): Animal {
     const randomIndex = Math.floor(Math.random() * this.animals.length);
     return this.animals[randomIndex];
   }
